@@ -1,9 +1,10 @@
-// src/api/fetchData.js
+import axios from 'axios';
 
-import axios from 'axios'
+const QUICKNODE_API_KEY = process.env.REACT_APP_QUICKNODE_API_KEY;
 
 // Base URL for the Quicknode endpoint, should be replaced with the actual endpoint URL.
-const BASE_URL = 'YOUR_QUICKNODE_ENDPOINT'
+const BASE_URL =
+	`https://wispy-muddy-mound.btc-testnet4.quiknode.pro/${QUICKNODE_API_KEY}`
 
 // Function to get data for a specific Bitcoin address
 export const getAddressData = async address => {

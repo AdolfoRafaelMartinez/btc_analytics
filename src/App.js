@@ -54,11 +54,11 @@ const App = () => {
 
 	// Function to fetch current Bitcoin fiat rates
 	const fetchBitcoinFiatRates = async () => {
-		// Assuming the API response structure matches what you provided
 		const timestampNow = Math.floor(Date.now() / 1000)
-
 		const fiatRates = await getBitcoinFiatRates(timestampNow)
-		setFiatRate({ USD: fiatRates.usd, EUR: fiatRates.eur, GBP: fiatRates.gbp })
+		if (fiatRates) {
+			setFiatRate({ USD: fiatRates.usd, EUR: fiatRates.eur, GBP: fiatRates.gbp })
+		}
 	}
 
 	return (
