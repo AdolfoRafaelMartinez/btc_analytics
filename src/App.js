@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react'
 import AddressInput from './components/AddressInput'
 import WalletStats from './components/WalletStats'
 import BalanceChart from './components/BalanceChart'
+import TransactionForm from './components/TransactionForm' // Import TransactionForm
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 // API functions to fetch various data
@@ -133,6 +134,11 @@ const App = () => {
 				{/* Display address data and Chart in a styled manner */}
 				{/* ... */}
 				{balanceHistory && <BalanceChart historyData={balanceHistory} />}
+                <div className="container mx-auto p-6">
+                    <div className="max-w-md mx-auto">
+                        <TransactionForm />
+                    </div>
+                </div>
 			</main>
 		</div>
 	)
